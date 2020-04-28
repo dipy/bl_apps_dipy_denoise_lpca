@@ -1,0 +1,10 @@
+{
+    "command": "dipy_denoise_nlmeans",
+    "sigma":0,
+    "patch_radius":1,
+    "block_radius":5,
+    "rician":True,
+    "dwi": "testdata/data.nii.gz",
+    "bvals": "testdata/data.bvals",
+    "bvecs": "testdata/data.bvecs",
+}

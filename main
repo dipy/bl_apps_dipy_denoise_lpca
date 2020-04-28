@@ -1,0 +1,33 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=6
+#PBS -l vmem=16gb
+#PBS -l walltime=10:00:00
+
+set -e
+set -x
+
+cmd=`jq -r .command config.json`
+case "$cmd" in
+
+    dipy_denoise_nlmeans)
+        cat > script.sh <<EOF
+#!/bin/bash
+$cmd --force \
+    --out_dir $(pwd) \
+    --sigma $(jq -r .sigma config.json) \
+    --patch_radius $(jq -r .patch_radius config.json) \
+    --block_radius $(jq -r .block_radius config.json) \
+    --rician $(jq -r .rician config.json) \
+    --out_denoised dwi.nii.gz \
+    $(jq -r .dwi config.json)
+EOF
+        ;;
+    *)
+        echo "invalid command: $cmd"
+        exit 1
+esac
+
+chmod +x script.sh
+SINGULARITYENV_PYTHONNOUSERSITE=true singularity exec -e docker://brainlife/dipy:1.1.1 ./script.sh
+
+echo "done"
