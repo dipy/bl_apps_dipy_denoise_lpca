@@ -1,9 +1,9 @@
 # Dipy Workflow Wrapper
 
-This is a Brainlife wrapper App for `dipy_denoise_nlmeans` workflow. This single wrapper is exposed through an apps registered on [Brainlife.io](https://brainlife.io).
+This is a Brainlife wrapper App for `dipy_denoise_lpca` workflow. This single wrapper is exposed through an apps registered on [Brainlife.io](https://brainlife.io).
 
 - More information about DIPY : [https://dipy.org/](https://dipy.org/)
-- More information about the command line `dipy_denoise_nlmeans`: [Command line Reference](https://dipy.org/documentation/latest/reference_cmd/dipy_denoise_nlmeans/)
+- More information about the command line `dipy_denoise_lpca`: [Command line Reference](https://dipy.org/documentation/latest/reference_cmd/dipy_denoise_lpca/)
 
 ## Running the App
 
@@ -15,9 +15,9 @@ You can see a list of [Dipy Apps currently regsitered on Brainlife](https://brai
 
 To run this command, you can simply type:
 
-`singularity exec -e docker://brainlife/dipy:1.1.1 dipy_denoise_nlmeans [your_args]`
+`singularity exec -e docker://brainlife/dipy:1.1.1 dipy_denoise_lpca [your_args]`
 
-To see the documentation of all arguments, [go to the following page](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_denoise_nlmeans/)
+To see the documentation of all arguments, [go to the following page](https://dipy.org/documentation/1.1.1./reference_cmd/dipy_denoise_lpca/)
 
 ### Dependencies
 

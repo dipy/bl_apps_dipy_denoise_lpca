@@ -1,9 +1,9 @@
 {
-    "command": "dipy_denoise_nlmeans",
+    "command": "dipy_denoise_lpca",
     "sigma":0,
-    "patch_radius":1,
-    "block_radius":5,
-    "rician":True,
+    "patch_radius":2,
+    "pca_method":'eig',
+    "tau_factor":2.3,
     "dwi": "testdata/data.nii.gz",
     "bvals": "testdata/data.bvals",
     "bvecs": "testdata/data.bvecs",

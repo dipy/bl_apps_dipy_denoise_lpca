@@ -9,15 +9,15 @@ set -x
 cmd=`jq -r .command config.json`
 case "$cmd" in
 
-    dipy_denoise_nlmeans)
+    dipy_denoise_lpca)
         cat > script.sh <<EOF
 #!/bin/bash
 $cmd --force \
     --out_dir $(pwd) \
     --sigma $(jq -r .sigma config.json) \
     --patch_radius $(jq -r .patch_radius config.json) \
-    --block_radius $(jq -r .block_radius config.json) \
-    --rician $(jq -r .rician config.json) \
+    --pca_method $(jq -r .pca_method config.json) \
+    --tau_factor $(jq -r .tau_factor config.json) \
     --out_denoised dwi.nii.gz \
     $(jq -r .dwi config.json)
 EOF
