@@ -19,7 +19,7 @@ $cmd --force \
     --pca_method $(jq -r .pca_method config.json) \
     --tau_factor $(jq -r .tau_factor config.json) \
     --out_denoised dwi.nii.gz \
-    $(jq -r .dwi config.json)
+    $(jq -r .dwi config.json) $(jq -r .bvals config.json) $(jq -r .bvecs config.json)
 EOF
         ;;
     *)
