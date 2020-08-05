@@ -3,6 +3,8 @@
 #PBS -l vmem=28gb
 #PBS -l walltime=10:00:00
 
+export SINGULARITYENV_OMP_NUM_THREADS=7
+
 set -e
 set -x
 
