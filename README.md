@@ -1,5 +1,5 @@
 [![Abcdspec-compliant](https://img.shields.io/badge/ABCD_Spec-v1.1-green.svg)](https://github.com/brain-life/abcd-spec)
-[![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.449-blue.svg)](https://doi.org/10.25663/brainlife.app.449)
+[![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.454-blue.svg)](https://doi.org/10.25663/brainlife.app.454)
 
 # DIPY Workflow Wrapper
 
