@@ -1,9 +1,9 @@
 [![Abcdspec-compliant](https://img.shields.io/badge/ABCD_Spec-v1.1-green.svg)](https://github.com/brain-life/abcd-spec)
 [![Run on Brainlife.io](https://img.shields.io/badge/Brainlife-bl.app.454-blue.svg)](https://doi.org/10.25663/brainlife.app.454)
 
-# Dipy Denoise Diffusion MRI
+# Dipy Denoise Diffusion MRI using LPCA
 
-The App uses a Local Principal Component Analysis (LPCA) to denoise diffusion-weighted magnetic resonance imaging data.
+The App uses the Local Principal Component Analysis (LPCA) method to denoise diffusion-weighted magnetic resonance imaging data.
 
 ### Authors
 - [Serge Koudoro](skoudoro@iu.edu)
@@ -47,7 +47,7 @@ To see the documentation of all arguments, [go to the following page](https://di
 This app runs on [singularity](https://www.sylabs.io/singularity/).
 
 ### DIPY
-- This is a Brainlife wrapper App stemming from the `dipy_denoise_lpca` workflow.
+- This is a Brainlife wrapper App stemming from the [`dipy_denoise_lpca`](https://dipy.org/documentation/latest/reference_cmd/dipy_denoise_lpca/) workflow.
 - This single wrapper is exposed through an apps registered on [Brainlife.io](https://brainlife.io).
 - More information about DIPY : [https://dipy.org/](https://dipy.org/).
 - More information about the command line `dipy_denoise_lpca`: [Command line Reference](https://dipy.org/documentation/latest/reference_cmd/dipy_denoise_lpca/).
