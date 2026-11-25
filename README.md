@@ -3,6 +3,50 @@
 
 # Dipy Denoise Diffusion MRI using LPCA
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+> **Denoises a DWI series with the DIPY 1.1.1 local PCA (dipy_denoise_lpca) workflow and outputs the denoised DWI with its bvals and bvecs.**
+
+Wraps the DIPY 1.1.1 command-line workflow dipy_denoise_lpca, which removes noise by thresholding local principal components using the gradient table. Use it as an optional early DWI preprocessing step before model fitting. It needs a DWI with bvals/bvecs; the gradient files are copied unchanged to the output.
+
+| | |
+|---|---|
+| 📥 **Inputs** | `neuro/dwi` |
+| 📤 **Outputs** | `neuro/dwi` |
+| 🐳 **Container** | `brainlife/dipy:1.1.1` |
+| ⚙️ **Resources** | 12 CPUs |
+| 🔗 **Run it** | [doi.org/10.25663/brainlife.app.454](https://doi.org/10.25663/brainlife.app.454) |
+
+#### 📥 Inputs
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `dwi` | `neuro/dwi` | yes | Diffusion-weighted image (NIfTI) with its bvals and bvecs files. |
+
+#### 📤 Outputs
+
+| Output | Datatype | Description |
+|---|---|---|
+| `output` | `neuro/dwi` | Denoised DWI (dwi.nii.gz) with the original bvals and bvecs. |
+
+<details>
+<summary><b>⚙️ Parameters</b> (4)</summary>
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `sigma` | number | `0` | Standard deviation of the noise estimated from the data. A value of 0 means sigma value estimation with the Manjon2013 algorithm |
+| `patch_radius` | number | `2` | The radius of the local patch to be taken around each voxel (in voxels). Default: 2 (denoise in blocks of 5x5x5 voxels). |
+| `pca_method` | string | `eig` | Use either eigenvalue decomposition ('eig') or singular value decomposition ('svd') for principal component analysis. The default method is 'eig' which is faster. However, occasionally 'svd' might be more accurate. |
+| `tau_factor` | number | `2.3` | Thresholding of PCA eigenvalues |
+
+</details>
+
+📚 **References used by this App:**
+- Garyfallidis E, et al. Dipy, a library for the analysis of diffusion MRI data. Front Neuroinform 8:8 (2014). [doi:10.3389/fninf.2014.00008](https://doi.org/10.3389/fninf.2014.00008)
+- Avesani P, et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6:69 (2019). [doi:10.1038/s41597-019-0073-y](https://doi.org/10.1038/s41597-019-0073-y)
+
+<!-- brainlife-app:end -->
+
 The App uses the Local Principal Component Analysis (LPCA) method to denoise diffusion-weighted magnetic resonance imaging data.
 
 ### Authors
